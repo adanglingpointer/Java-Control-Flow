@@ -40,7 +40,15 @@ public class SwitchStatement {
         System.out.printf("Current Card Value: %d%n", currentValue);
         System.out.printf("Total value: %d%n", currentTotalValue + currentValue);
 
-        // new pattern matching for switches in JDK 21
+        // new pattern matching for switches in JDK 21 (17 preview)
+        String var1 = "Hello World!";
+        Object obj = var1;
+        switch (obj) {
+            case String msg -> System.out.println(msg); // Hello World!
+            default -> System.out.println("Have no idea");
+        }
+        // we use a switch here to cast obj to a String, an alternative of:
+        //  String msg = (String) obj;
 
     }
 }
