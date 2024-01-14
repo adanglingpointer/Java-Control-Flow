@@ -12,7 +12,12 @@ public class Other {
         // JDK21 - string templating
         String[] arr = {"hello", "world"};
         System.out.printf("An array with %d elements", arr.length);
-        // alternative of string template:
+        // alternative using string template:
         System.out.println(STR."An array with \{arr.length} elements");
+
+        int varPlusPlus = 0;
+        int plusPlusVar = 0;
+        System.out.println(varPlusPlus++); // 0
+        System.out.println(++plusPlusVar); // 1
     }
 }

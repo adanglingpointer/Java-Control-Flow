@@ -2,6 +2,9 @@ import java.util.Random;
 
 public class SwitchStatement {
     public static void main(String[] args) {
+        record Person(String firstName, String lastName, int age) {
+
+        }
         int randomNum = new Random().nextInt(5) + 1;
         System.out.printf("Generated number is: %d.%n", randomNum);
 
@@ -42,9 +45,12 @@ public class SwitchStatement {
 
         // new pattern matching for switches in JDK 21 (17 preview)
         String var1 = "Hello World!";
+        Person var2 = new Person("Jake", "Johnson", 40);
         Object obj = var1;
         switch (obj) {
+            case null -> System.out.println("It's null");
             case String msg -> System.out.println(msg); // Hello World!
+            case Person p when p.firstName().length() > 3 -> System.out.println("Looks like Jake");
             default -> System.out.println("Have no idea");
         }
         // we use a switch here to cast obj to a String, an alternative of:
