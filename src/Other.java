@@ -1,3 +1,5 @@
+import java.util.Random;
+
 import static java.lang.StringTemplate.STR;
 
 public class Other {
@@ -19,5 +21,13 @@ public class Other {
         int plusPlusVar = 0;
         System.out.println(varPlusPlus++); // 0
         System.out.println(++plusPlusVar); // 1
+
+        // ternary operator
+        int randomNum = new Random().nextInt(2) + 1;
+        String cactusText = randomNum > 1 ? "cacti" : "cactus";
+        System.out.printf("You were prickled by %d %s.%n", randomNum, cactusText);
+        // You were prickled by 1 cactus.
+        // or
+        // You were prickled by 2 cacti.
     }
 }
