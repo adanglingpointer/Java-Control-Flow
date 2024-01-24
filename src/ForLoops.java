@@ -17,16 +17,19 @@ public class ForLoops {
                 if (guessedNum == randomNum) {
                     String tryText = wrongGuessCount == 1 ? "try" : "tries";
                     System.out.printf("The random number was %d. You guessed in %d %s%n", randomNum, wrongGuessCount, tryText);
-                    return;
+                    break;
                 } else {
                     System.out.printf("You didn't get it!%n");
+                    continue;
                 }
+                // System.out.println("This line would be unreachable");
             }
         }
 
         if (wrongGuessCount >= MAX_ALLOWED_TRIES) {
             System.out.printf("You had %d incorrect guesses.  The number was %d%n", wrongGuessCount - 1, randomNum);
         }
+        System.out.println("Program ended%n");
 
     }
 }
